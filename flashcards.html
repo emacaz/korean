@@ -2,11 +2,8 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no"
-    />
-    <title>ECZ - Estudio de Coreano: Vocales y Consonantes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudio de Coreano: Vocales y Consonantes</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -16,12 +13,6 @@
         height: 100vh;
         margin: 0;
         background-color: #f4f4f9;
-        flex-direction: column;
-        padding: 1rem;
-      }
-      h1 {
-        font-size: 22px;
-        text-align: center;
       }
       .flashcard-container {
         text-align: center;
@@ -29,9 +20,8 @@
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        width: 80%;
-        max-width: 350px; /* Ajuste para dispositivos más grandes */
-        margin: 10px;
+        width: 300px;
+        max-width: 90%; /* Ajuste para pantallas pequeñas */
       }
       .flashcard {
         font-size: 80px;
@@ -43,11 +33,8 @@
       }
       .button-container {
         margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
       }
-      .nav-button {
+      .next-button {
         background-color: #4caf50;
         color: white;
         padding: 10px 20px;
@@ -55,13 +42,12 @@
         border-radius: 5px;
         cursor: pointer;
         font-size: 16px;
-        width: 45%; /* Hacer los botones más estrechos */
       }
-      .nav-button:hover {
+      .next-button:hover {
         background-color: #45a049;
       }
 
-      /* Estilo responsive */
+      /* Media Query para pantallas más pequeñas */
       @media (max-width: 600px) {
         .flashcard {
           font-size: 60px; /* Reducir tamaño de las letras */
@@ -69,35 +55,25 @@
         .flashcard-sound {
           font-size: 24px; /* Reducir tamaño del texto para las letras */
         }
-        .nav-button {
+        .next-button {
           font-size: 14px;
           padding: 8px 16px;
-        }
-        .button-container {
-          flex-direction: column;
-          align-items: center;
-        }
-        .nav-button {
-          width: 90%; /* Botones más anchos en pantallas pequeñas */
-          margin-bottom: 10px; /* Separar los botones */
         }
       }
     </style>
   </head>
   <body>
-    <h1>Emanuel Castillo</h1>
-    <!-- Título con tus iniciales -->
     <div class="flashcard-container">
       <div class="flashcard" id="symbol"></div>
       <div class="flashcard-sound" id="sound"></div>
       <div class="button-container">
-        <button class="nav-button" onclick="prevCard()">← Anterior</button>
-        <button class="nav-button" onclick="nextCard()">Siguiente →</button>
+        <button class="next-button" onclick="nextCard()">Siguiente</button>
       </div>
     </div>
 
     <script>
       const flashcards = [
+        // Vocales simples
         { symbol: "ㅏ", sound: "a" },
         { symbol: "ㅓ", sound: "eo" },
         { symbol: "ㅗ", sound: "o" },
@@ -112,6 +88,8 @@
         { symbol: "ㅕ", sound: "yeo" },
         { symbol: "ㅛ", sound: "yo" },
         { symbol: "ㅠ", sound: "yu" },
+
+        // Vocales compuestas
         { symbol: "ㅘ", sound: "wa" },
         { symbol: "ㅙ", sound: "wae" },
         { symbol: "ㅝ", sound: "weo" },
@@ -119,14 +97,16 @@
         { symbol: "ㅢ", sound: "ui" },
         { symbol: "ㅖ", sound: "ye" },
         { symbol: "ㅒ", sound: "yae" },
-        { symbol: "ㄱ", sound: "g (k)" },
+
+        // Consonantes
+        { symbol: "ㄱ", sound: "g" },
         { symbol: "ㄴ", sound: "n" },
-        { symbol: "ㄷ", sound: "d (t)" },
+        { symbol: "ㄷ", sound: "d" },
         { symbol: "ㄹ", sound: "r" },
         { symbol: "ㅁ", sound: "m" },
         { symbol: "ㅂ", sound: "b" },
         { symbol: "ㅅ", sound: "s" },
-        { symbol: "ㅇ", sound: "'ng' al final, mudo al inicio" },
+        { symbol: "ㅇ", sound: "ng" },
         { symbol: "ㅈ", sound: "j" },
         { symbol: "ㅊ", sound: "ch" },
         { symbol: "ㅋ", sound: "k" },
