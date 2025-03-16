@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudio de Coreano: Vocales y Consonantes</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+      }
+      .flashcard-container {
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        max-width: 90%; /* Ajuste para pantallas pequeñas */
+      }
+      .flashcard {
+        font-size: 80px;
+        margin-bottom: 10px;
+      }
+      .flashcard-sound {
+        font-size: 30px;
+        margin-top: 10px;
+      }
+      .button-container {
+        margin-top: 20px;
+      }
+      .next-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .next-button:hover {
+        background-color: #45a049;
+      }
+
+      /* Media Query para pantallas más pequeñas */
+      @media (max-width: 600px) {
+        .flashcard {
+          font-size: 60px; /* Reducir tamaño de las letras */
+        }
+        .flashcard-sound {
+          font-size: 24px; /* Reducir tamaño del texto para las letras */
+        }
+        .next-button {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flashcard-container">
+      <div class="flashcard" id="symbol"></div>
+      <div class="flashcard-sound" id="sound"></div>
+      <div class="button-container">
+        <button class="next-button" onclick="nextCard()">Siguiente</button>
+      </div>
+    </div>
+
+    <script>
+      const flashcards = [
+        // Vocales simples
+        { symbol: "ㅏ", sound: "a" },
+        { symbol: "ㅓ", sound: "eo" },
+        { symbol: "ㅗ", sound: "o" },
+        { symbol: "ㅜ", sound: "u" },
+        { symbol: "ㅡ", sound: "eu" },
+        { symbol: "ㅣ", sound: "i" },
+        { symbol: "ㅐ", sound: "ae" },
+        { symbol: "ㅔ", sound: "e" },
+        { symbol: "ㅚ", sound: "oe" },
+        { symbol: "ㅟ", sound: "wi" },
+        { symbol: "ㅑ", sound: "ya" },
+        { symbol: "ㅕ", sound: "yeo" },
+        { symbol: "ㅛ", sound: "yo" },
+        { symbol: "ㅠ", sound: "yu" },
+
+        // Vocales compuestas
+        { symbol: "ㅘ", sound: "wa" },
+        { symbol: "ㅙ", sound: "wae" },
+        { symbol: "ㅝ", sound: "weo" },
+        { symbol: "ㅞ", sound: "we" },
+        { symbol: "ㅢ", sound: "ui" },
+        { symbol: "ㅖ", sound: "ye" },
+        { symbol: "ㅒ", sound: "yae" },
+
+        // Consonantes
+        { symbol: "ㄱ", sound: "g" },
+        { symbol: "ㄴ", sound: "n" },
+        { symbol: "ㄷ", sound: "d" },
+        { symbol: "ㄹ", sound: "r" },
+        { symbol: "ㅁ", sound: "m" },
+        { symbol: "ㅂ", sound: "b" },
+        { symbol: "ㅅ", sound: "s" },
+        { symbol: "ㅇ", sound: "ng" },
+        { symbol: "ㅈ", sound: "j" },
+        { symbol: "ㅊ", sound: "ch" },
+        { symbol: "ㅋ", sound: "k" },
+        { symbol: "ㅌ", sound: "t" },
+        { symbol: "ㅍ", sound: "p" },
+        { symbol: "ㅎ", sound: "h" },
+        { symbol: "ㄲ", sound: "kk" },
+        { symbol: "ㄸ", sound: "tt" },
+        { symbol: "ㅃ", sound: "pp" },
+        { symbol: "ㅆ", sound: "ss" },
+        { symbol: "ㅉ", sound: "jj" },
+      ];
+
+      let currentIndex = 0;
+
+      function loadCard() {
+        const card = flashcards[currentIndex];
+        document.getElementById("symbol").textContent = card.symbol;
+        document.getElementById("sound").textContent = card.sound; // Ahora muestra la letra
+      }
+
+      function nextCard() {
+        currentIndex = (currentIndex + 1) % flashcards.length;
+        loadCard();
+      }
+
+      function prevCard() {
+        currentIndex =
+          (currentIndex - 1 + flashcards.length) % flashcards.length;
+        loadCard();
+      }
+
+      // Event listener para flechas de teclado
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+          nextCard(); // Flecha derecha
+        } else if (event.key === "ArrowLeft") {
+          prevCard(); // Flecha izquierda
+        }
+      });
+
+      loadCard();
+    </script>
+  </body>
+</html>
