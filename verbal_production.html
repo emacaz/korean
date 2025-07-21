@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Práctica de Verbos Coreanos</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 2em;
+        background: #f0f0f0;
+      }
+      .card {
+        background: white;
+        padding: 1em;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: auto;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+      }
+      .hidden {
+        display: none;
+      }
+      button {
+        padding: 6px 13px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 20px;
+        background: #007bff;
+        /* background: #c97d00; */
+        color: white;
+        cursor: pointer;
+        /* box-shadow: gray 3px 3px; */
+      }
+      /* button:hover { */
+        /* background: #c4c4c400; */
+      /* } */
+
+      p,
+      h3 {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 22px;
+      }
+
+      .verb-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .icon-button {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
+
+      .icon-button img {
+        width: 28px;
+        height: 28px;
+        border: black 1px solid;
+        padding: 5px;
+        border-radius: 50%;
+      }
+
+      .icon-text-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        background: none;
+        cursor: pointer;
+        margin: 8px;
+      }
+
+      .icon-text-button img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 5px;
+      }
+
+      .icon-text-button span {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .icon-text-button:hover img {
+        filter: brightness(1.1);
+        transform: scale(1.05);
+        transition: 0.2s;
+      }
+
+      .icon-text-button:active {
+        transform: scale(0.95);
+        transition: transform 0.1s;
+      }
+
+      .control-btn-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="app">
+      <div id="start-screen">
+        <h2>¡Bienvenido!</h2>
+        <button onclick="start()">Comenzar</button>
+      </div>
+
+      <div id="verb-screen" class="hidden">
+        <img id="verb-img" src="" alt="Imagen del verbo" />
+        <div id="step-content"></div>
+        <div>
+          <button class="icon-button" onclick="startRecognition()">
+            <img src="../images/mic-icon.png" alt="Hablar" />
+          </button>
+        </div>
+
+        <div class="control-btn-container">
+          <button
+            id="prev-button"
+            class="icon-text-button"
+            onclick="prevVerb()"
+            style="display: none"
+          >
+            <img src="../images/prev-icon.png" alt="Anterior" />
+            <span>Anterior</span>
+          </button>
+
+          <button class="icon-text-button" onclick="nextVerb()">
+            <img src="../images/next-icon.png" alt="Siguiente" />
+            <span>Siguiente</span>
+          </button>
+
+          <button class="icon-text-button" onclick="restart()">
+            <img src="../images/restart-icon.png" alt="Reiniciar" />
+            <span>Reiniciar</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="end-screen" class="hidden">
+        <h2>¡Has terminado todos los verbos!</h2>
+        <button
+          class="icon-text-button"
+          onclick="restart()"
+          style="margin: auto"
+        >
+          <img src="../images/restart-icon.png" alt="Reiniciar" />
+          <span>Reiniciar</span>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const verbs = [
+        {
+          coreano: "가깝다",
+          traduccion: "estar cerca",
+          imagen: "../images/be-close.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "가다",
+          traduccion: "ir",
+          imagen: "../images/go.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "가르치다",
+          traduccion: "enseñar",
+          imagen: "../images/teach.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "가볍다",
+          traduccion: "ser liviano",
+          imagen: "../images/light.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "가지다",
+          traduccion: "tener",
+          imagen: "../images/have.jpg",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "감사하다",
+          traduccion: "agradecer",
+          imagen: "../images/thank.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "같다",
+          traduccion: "ser igual",
+          imagen: "../images/seem.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "건강하다",
+          traduccion: "estar saludable",
+          imagen: "../images/be-healthy.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "계시다",
+          traduccion: "estar (honorífico)",
+          imagen: "../images/be-honorific.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "고맙다",
+          traduccion: "estar agradecido",
+          imagen: "../images/thank.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "공부하다",
+          traduccion: "estudiar",
+          imagen: "../images/learn.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "괜찮다",
+          traduccion: "estar bien",
+          imagen: "../images/ok.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "기다리다",
+          traduccion: "esperar",
+          imagen: "../images/wait.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "길다",
+          traduccion: "ser largo",
+          imagen: "../images/long.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "나다",
+          traduccion: "surgir",
+          imagen: "../images/appear.png",
+          objeto: { ko: "", es: "" },
+        },
+      ];
+
+      let currentVerb = 0;
+      let currentStep = 0; // 0: Verbo, 1: Recuerdo, 2: Producción
+
+      const img = document.getElementById("verb-img");
+      const stepContent = document.getElementById("step-content");
+
+      function start() {
+        document.getElementById("start-screen").classList.add("hidden");
+        document.getElementById("verb-screen").classList.remove("hidden");
+        currentVerb = 0;
+        currentStep = 0;
+        renderStep();
+      }
+
+      function restart() {
+        document.getElementById("end-screen").classList.add("hidden");
+        document.getElementById("verb-screen").classList.add("hidden");
+        document.getElementById("start-screen").classList.remove("hidden");
+      }
+
+      function nextVerb() {
+        currentStep = 0;
+        currentVerb++;
+        if (currentVerb >= verbs.length) {
+          document.getElementById("verb-screen").classList.add("hidden");
+          document.getElementById("end-screen").classList.remove("hidden");
+        } else {
+          renderStep();
+        }
+      }
+
+      function prevVerb() {
+        if (currentVerb > 0) {
+          currentVerb--;
+          currentStep = 0;
+          renderStep();
+        }
+      }
+
+      function renderStep() {
+        const v = verbs[currentVerb];
+        img.src = v.imagen;
+
+        if (currentStep === 0) {
+          stepContent.innerHTML = `
+            <div class="verb-line">
+            <h3 style="margin: 0;">${v.coreano}</h3>
+            <button class="icon-button" onclick="speakCurrentVerb()">
+                <img src="../images/speaker-icon.png" alt="Reproducir" />
+            </button>
+            </div>
+            <p>${v.traduccion}</p>
+        `;
+        } else if (currentStep === 1) {
+          stepContent.innerHTML = `
+          <h3>¿Recuerdas este verbo?</h3>
+          <p>${v.traduccion}</p>
+        `;
+        } else if (currentStep === 2) {
+          stepContent.innerHTML = `
+          <h3>Produce esta frase:</h3>
+          <p><b>저는 ${v.objeto.ko}을 ${conjugateVerb(v.coreano)}</b></p>
+          <p>Yo ${v.traduccion} ${v.objeto.es}</p>
+        `;
+        }
+
+        document.getElementById("prev-button").style.display =
+          currentVerb > 0 ? "inline-flex" : "none";
+      }
+
+      function speakCurrentVerb() {
+        const v = verbs[currentVerb];
+        const utterance = new SpeechSynthesisUtterance(v.coreano);
+        utterance.lang = "ko-KR";
+        speechSynthesis.speak(utterance);
+      }
+
+      function startRecognition() {
+        const v = verbs[currentVerb];
+        const expected =
+          currentStep === 2
+            ? `저는 ${v.objeto.ko}을 ${conjugateVerb(v.coreano)}`
+            : v.coreano;
+
+        if (!("webkitSpeechRecognition" in window)) {
+          alert("Tu navegador no soporta reconocimiento de voz.");
+          return;
+        }
+
+        const rec = new webkitSpeechRecognition();
+        rec.lang = "ko-KR";
+        rec.interimResults = false;
+        rec.maxAlternatives = 1;
+
+        rec.onresult = function (event) {
+          const result = event.results[0][0].transcript.trim();
+          console.log("Usuario dijo:", result);
+          console.log("Esperado:", expected);
+          alert(`Dijiste: ${result}`);
+          currentStep++;
+          if (currentStep > 2) {
+            nextVerb();
+          } else {
+            renderStep();
+          }
+        };
+
+        rec.onerror = function (err) {
+          alert("Error en reconocimiento de voz.");
+          console.error(err);
+        };
+
+        rec.start();
+      }
+
+      function conjugateVerb(verb) {
+        // Conjugación simplificada para propósito del demo
+        if (verb === "가깝다") return "가까워요";
+        if (verb === "가르치다") return "가르쳐요";
+        if (verb === "가볍다") return "가벼워요";
+        if (verb === "가지다") return "가져요";
+        if (verb === "감사하다") return "감사해요";
+        if (verb === "같다") return "같아요";
+        if (verb === "건강하다") return "건강해요";
+        if (verb === "계시다") return "계세요"; // honorífico de 있다
+        if (verb === "고맙다") return "고마워요";
+        if (verb === "공부하다") return "공부해요";
+        if (verb === "괜찮다") return "괜찮아요";
+        if (verb === "기다리다") return "기다려요";
+        if (verb === "길다") return "길어요";
+        if (verb === "나다") return "나요";
+        return verb;
+      }
+    </script>
+  </body>
+</html>
