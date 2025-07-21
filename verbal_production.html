@@ -154,7 +154,7 @@
           onclick="restart()"
           style="margin: auto"
         >
-          <img src="../images/restart-icon.png" alt="Reiniciar" />
+          <img src="./images/restart-icon.png" alt="Reiniciar" />
           <span>Reiniciar</span>
         </button>
       </div>
@@ -250,6 +250,98 @@
           coreano: "나다",
           traduccion: "surgir",
           imagen: "./images/appear.png",
+          objeto: { ko: "", es: "" },
+        },
+
+        // Continúa después del verbo 15
+        {
+          coreano: "나가다",
+          traduccion: "salir",
+          imagen: "./images/go-out.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "나오다",
+          traduccion: "venir (hacia afuera)",
+          imagen: "./images/come-out.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "다르다",
+          traduccion: "ser diferente",
+          imagen: "./images/different.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "대답하다",
+          traduccion: "responder",
+          imagen: "./images/answer.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "덥다",
+          traduccion: "hacer calor / estar caliente (clima)",
+          imagen: "./images/hot-weather.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "도와주다",
+          traduccion: "ayudar",
+          imagen: "./images/help.jpeg",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "돌다",
+          traduccion: "girar",
+          imagen: "./images/turn.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "도착하다",
+          traduccion: "llegar",
+          imagen: "./images/arrive.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "되다",
+          traduccion: "convertirse / volverse",
+          imagen: "./images/become.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "듣다",
+          traduccion: "escuchar",
+          imagen: "./images/listen.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "들어가다",
+          traduccion: "entrar (ir hacia adentro)",
+          imagen: "./images/enter.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "들어오다",
+          traduccion: "entrar (venir hacia adentro)",
+          imagen: "./images/come-in.jpg",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "따뜻하다",
+          traduccion: "ser cálido",
+          imagen: "./images/warm.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "떨어지다",
+          traduccion: "caer(se)",
+          imagen: "./images/fall.png",
+          objeto: { ko: "", es: "" },
+        },
+        {
+          coreano: "뜨겁다",
+          traduccion: "estar caliente (al tacto)",
+          imagen: "./images/hot-touch.png",
           objeto: { ko: "", es: "" },
         },
       ];
@@ -385,6 +477,25 @@
         if (verb === "기다리다") return "기다려요";
         if (verb === "길다") return "길어요";
         if (verb === "나다") return "나요";
+
+        // 16 - 30
+        if (verb === "나가다") return "나가요";
+        if (verb === "나오다") return "나와요";
+        if (verb === "다르다") return "달라요"; // irregular
+        if (verb === "대답하다") return "대답해요";
+        if (verb === "덥다") return "더워요"; // irregular
+        if (verb === "도와주다") return "도와줘요";
+        if (verb === "돌다") return "돌아요";
+        if (verb === "도착하다") return "도착해요";
+        if (verb === "되다") return "돼요"; // irregular
+        if (verb === "듣다") return "들어요"; // irregular
+        if (verb === "들어가다") return "들어가요";
+        if (verb === "들어오다") return "들어와요";
+        if (verb === "따뜻하다") return "따뜻해요";
+        if (verb === "떨어지다") return "떨어져요";
+        if (verb === "뜨겁다") return "뜨거워요"; // irregular
+
+        // 31 - 45
         return verb;
       }
     </script>
