@@ -347,6 +347,187 @@
           imagen: "./images/hot-touch.png",
           objeto: { ko: "물", es: "el agua" },
         },
+
+        {
+          coreano: "만나다",
+          traduccion: "encontrarse / conocer",
+          imagen: "./images/meet.png",
+          objeto: { ko: "친구", es: "amigo" },
+        },
+        {
+          coreano: "만들다",
+          traduccion: "hacer / crear",
+          imagen: "./images/make.png",
+          objeto: { ko: "음식", es: "comida" },
+        },
+        {
+          coreano: "많다",
+          traduccion: "haber mucho",
+          imagen: "./images/many.png",
+          objeto: { ko: "사람", es: "personas" },
+        },
+        {
+          coreano: "말하다",
+          traduccion: "hablar / decir",
+          imagen: "./images/speak.png",
+          objeto: { ko: "이야기", es: "historia / cosa que decir" },
+        },
+        {
+          coreano: "맞다",
+          traduccion: "ser correcto / acertar",
+          imagen: "./images/correct.jpg",
+          objeto: { ko: "답", es: "respuesta" },
+        },
+        {
+          coreano: "마시다",
+          traduccion: "beber",
+          imagen: "./images/drink.png",
+          objeto: { ko: "물", es: "agua" },
+        },
+        {
+          coreano: "먹다",
+          traduccion: "comer",
+          imagen: "./images/eat.png",
+          objeto: { ko: "밥", es: "arroz / comida" },
+        },
+        {
+          coreano: "멀다",
+          traduccion: "estar lejos",
+          imagen: "./images/far.png",
+          objeto: { ko: "학교", es: "escuela" },
+        },
+        {
+          coreano: "모르다",
+          traduccion: "no saber / desconocer",
+          imagen: "./images/dont-know.png",
+          objeto: { ko: "정답", es: "respuesta correcta" },
+        },
+        {
+          coreano: "못하다",
+          traduccion: "no poder / ser incapaz",
+          imagen: "./images/cant.jpg",
+          objeto: { ko: "수영", es: "nadar" },
+        },
+        {
+          coreano: "무겁다",
+          traduccion: "ser pesado",
+          imagen: "./images/heavy.jpg",
+          objeto: { ko: "짐", es: "equipaje" },
+        },
+        {
+          coreano: "무섭다",
+          traduccion: "dar miedo / ser aterrador",
+          imagen: "./images/scary.jpg",
+          objeto: { ko: "영화", es: "película" },
+        },
+        {
+          coreano: "묻다",
+          traduccion: "preguntar",
+          imagen: "./images/ask.png",
+          objeto: { ko: "질문", es: "pregunta" },
+        },
+        {
+          coreano: "미안하다",
+          traduccion: "disculparse / estar apenado",
+          imagen: "./images/sorry.png",
+          objeto: { ko: "실수", es: "error" },
+        },
+        {
+          coreano: "바꾸다",
+          traduccion: "cambiar",
+          imagen: "./images/change.png",
+          objeto: { ko: "계획", es: "plan" },
+        },
+        {
+          coreano: "바쁘다",
+          traduccion: "estar ocupado",
+          imagen: "./images/busy.png",
+          objeto: { ko: "일", es: "trabajo" },
+        },
+        {
+          coreano: "받다",
+          traduccion: "recibir",
+          imagen: "./images/receive.png",
+          objeto: { ko: "선물", es: "regalo" },
+        },
+        {
+          coreano: "벗다",
+          traduccion: "quitarse (ropa)",
+          imagen: "./images/take-off.png",
+          objeto: { ko: "옷", es: "ropa" },
+        },
+        {
+          coreano: "보다",
+          traduccion: "ver",
+          imagen: "./images/see.png",
+          objeto: { ko: "영화", es: "película" },
+        },
+        {
+          coreano: "비슷하다",
+          traduccion: "ser similar",
+          imagen: "./images/similar.png",
+          objeto: { ko: "모양", es: "forma" },
+        },
+        {
+          coreano: "비싸다",
+          traduccion: "ser caro",
+          imagen: "./images/expensive.png",
+          objeto: { ko: "물건", es: "objeto" },
+        },
+        {
+          coreano: "빠르다",
+          traduccion: "ser rápido",
+          imagen: "./images/fast.png",
+          objeto: { ko: "자동차", es: "automóvil" },
+        },
+        {
+          coreano: "부르다",
+          traduccion: "llamar",
+          imagen: "./images/call.png",
+          objeto: { ko: "이름", es: "nombre" },
+        },
+        {
+          coreano: "사다",
+          traduccion: "comprar",
+          imagen: "./images/buy.png",
+          objeto: { ko: "책", es: "libro" },
+        },
+        {
+          coreano: "살다",
+          traduccion: "vivir",
+          imagen: "./images/live.png",
+          objeto: { ko: "도시", es: "ciudad" },
+        },
+        {
+          coreano: "생각하다",
+          traduccion: "pensar",
+          imagen: "./images/think.png",
+          objeto: { ko: "문제", es: "problema" },
+        },
+        {
+          coreano: "서다",
+          traduccion: "estar de pie",
+          imagen: "./images/stand.png",
+          objeto: { ko: "의자", es: "silla" },
+        },
+        {
+          coreano: "쉬다",
+          traduccion: "descansar",
+          imagen: "./images/rest.png",
+          objeto: { ko: "휴식", es: "descanso" },
+        },
+        {
+          coreano: "쉽다",
+          traduccion: "ser fácil",
+          imagen: "./images/easy.png",
+          objeto: { ko: "문제", es: "problema" },
+        },
+        {
+          coreano: "시작하다",
+          traduccion: "empezar",
+          imagen: "./images/start.png",
+          objeto: { ko: "일", es: "trabajo" },
+        },
       ];
 
       let currentVerb = 0;
@@ -394,25 +575,25 @@
 
         if (currentStep === 0) {
           stepContent.innerHTML = `
-            <div class="verb-line">
-            <h3 style="margin: 0;">${v.coreano}</h3>
-            <button class="icon-button" onclick="speakCurrentVerb()">
-                <img src="./images/speaker-icon.png" alt="Reproducir" />
-            </button>
-            </div>
-            <p>${v.traduccion}</p>
-        `;
+                <div class="verb-line">
+                <h3 style="margin: 0;">${v.coreano}</h3>
+                <button class="icon-button" onclick="speakCurrentVerb()">
+                    <img src="./images/speaker-icon.png" alt="Reproducir" />
+                </button>
+                </div>
+                <p>${v.traduccion}</p>
+            `;
         } else if (currentStep === 1) {
           stepContent.innerHTML = `
-          <h3>¿Recuerdas este verbo?</h3>
-          <p>${v.traduccion}</p>
-        `;
+              <h3>¿Recuerdas este verbo?</h3>
+              <p>${v.traduccion}</p>
+            `;
         } else if (currentStep === 2) {
           stepContent.innerHTML = `
-          <h3>Produce esta frase:</h3>
-          <p><b>저는 ${v.objeto.ko}을 ${conjugateVerb(v.coreano)}</b></p>
-          <p>Yo ${v.traduccion} ${v.objeto.es}</p>
-        `;
+              <h3>Produce esta frase:</h3>
+              <p><b>저는 ${v.objeto.ko}을 ${conjugateVerb(v.coreano)}</b></p>
+              <p>Yo ${v.traduccion} ${v.objeto.es}</p>
+            `;
         }
 
         document.getElementById("prev-button").style.display =
@@ -500,6 +681,44 @@
         if (verb === "뜨겁다") return "뜨거워요"; // irregular
 
         // 31 - 45
+        if (verb === "만나다") return "만나요";
+        if (verb === "만들다") return "만들어요";
+        if (verb === "많다") return "많아요";
+        if (verb === "말하다") return "말해요";
+        if (verb === "맞다") return "맞아요";
+        if (verb === "마시다") return "마셔요";
+        if (verb === "먹다") return "먹어요";
+        if (verb === "멀다") return "멀어요";
+        if (verb === "모르다") return "몰라요"; // irregular
+        if (verb === "못하다") return "못해요";
+        if (verb === "무겁다") return "무거워요"; // irregular
+        if (verb === "무섭다") return "무서워요"; // irregular
+        if (verb === "묻다") return "물어요"; // ㄷ irregular
+        if (verb === "미안하다") return "미안해요";
+        if (verb === "바꾸다") return "바꿔요"; // 우 irregular
+
+        // 46 - 60
+        if (verb === "바쁘다") return "바빠요";
+        if (verb === "받다") return "받아요";
+        if (verb === "벗다") return "벗어요";
+        if (verb === "보다") return "봐요";
+        if (verb === "비슷하다") return "비슷해요";
+        if (verb === "비싸다") return "비싸요";
+        if (verb === "빠르다") return "빨라요";
+        if (verb === "부르다") return "불러요";
+        if (verb === "사다") return "사요";
+        if (verb === "살다") return "살아요";
+        if (verb === "생각하다") return "생각해요";
+        if (verb === "서다") return "서요";
+        if (verb === "쉬다") return "쉬어요";
+        if (verb === "쉽다") return "쉬워요";
+        if (verb === "시작하다") return "시작해요";
+
+        // 61 - 75
+
+        // 76 - 90
+
+        // 91 - 100
         return verb;
       }
     </script>
