@@ -618,6 +618,156 @@
           imagen: "./images/read.png",
           objeto: { ko: "책", es: "el libro" },
         },
+        {
+          coreano: "잃어버리다",
+          traduccion: "perder (algo)",
+          imagen: "./images/lose.png",
+          objeto: { ko: "지갑", es: "la billetera" },
+        },
+        {
+          coreano: "입다",
+          traduccion: "vestirse / ponerse",
+          imagen: "./images/wear.png",
+          objeto: { ko: "옷", es: "la ropa" },
+        },
+        {
+          coreano: "있다",
+          traduccion: "haber / tener",
+          imagen: "./images/have.png",
+          objeto: { ko: "시간", es: "tiempo" },
+        },
+        {
+          coreano: "잊어버리다",
+          traduccion: "olvidarse",
+          imagen: "./images/forget.png",
+          objeto: { ko: "이름", es: "el nombre" },
+        },
+        {
+          coreano: "자다",
+          traduccion: "dormir",
+          imagen: "./images/sleep.png",
+          objeto: { ko: "침대", es: "la cama" },
+        },
+        {
+          coreano: "작다",
+          traduccion: "ser pequeño",
+          imagen: "./images/small.png",
+          objeto: { ko: "방", es: "la habitación" },
+        },
+        {
+          coreano: "잘하다",
+          traduccion: "hacer bien",
+          imagen: "./images/do-well.png",
+          objeto: { ko: "일", es: "el trabajo" },
+        },
+        {
+          coreano: "재미있다",
+          traduccion: "ser interesante / divertido",
+          imagen: "./images/fun.png",
+          objeto: { ko: "영화", es: "la película" },
+        },
+        {
+          coreano: "적다",
+          traduccion: "haber poco",
+          imagen: "./images/few.jpg",
+          objeto: { ko: "사람", es: "la gente" },
+        },
+        {
+          coreano: "전화하다",
+          traduccion: "telefonear",
+          imagen: "./images/call.png",
+          objeto: { ko: "엄마", es: "la mamá" },
+        },
+        {
+          coreano: "조심하다",
+          traduccion: "tener cuidado",
+          imagen: "./images/careful.jpeg",
+          objeto: { ko: "길", es: "el camino" },
+        },
+        {
+          coreano: "좋다",
+          traduccion: "ser bueno / estar bien",
+          imagen: "./images/good.png",
+          objeto: { ko: "음식", es: "la comida" },
+        },
+        {
+          coreano: "좋아하다",
+          traduccion: "gustar",
+          imagen: "./images/like.png",
+          objeto: { ko: "음악", es: "la música" },
+        },
+        {
+          coreano: "주다",
+          traduccion: "dar",
+          imagen: "./images/give.jpeg",
+          objeto: { ko: "선물", es: "el regalo" },
+        },
+        {
+          coreano: "죽다",
+          traduccion: "morir",
+          imagen: "./images/die.jpg",
+          objeto: { ko: "개", es: "el perro" },
+        },
+        {
+          coreano: "중요하다",
+          traduccion: "ser importante",
+          imagen: "./images/important.jpg",
+          objeto: { ko: "회의", es: "la reunión" },
+        },
+        {
+          coreano: "짧다",
+          traduccion: "ser/estar corto",
+          imagen: "./images/be-short.png",
+          objeto: { ko: "치마", es: "la falda" },
+        },
+        {
+          coreano: "찾다",
+          traduccion: "buscar",
+          imagen: "./images/search.png",
+          objeto: { ko: "지갑", es: "la billetera" },
+        },
+        {
+          coreano: "춥다",
+          traduccion: "hacer frío / tener frío",
+          imagen: "./images/be-cold.png",
+          objeto: { ko: "날씨", es: "el clima" },
+        },
+        {
+          coreano: "크다",
+          traduccion: "ser grande",
+          imagen: "./images/be-big.png",
+          objeto: { ko: "집", es: "la casa" },
+        },
+        {
+          coreano: "타다",
+          traduccion: "tomar (un vehículo)",
+          imagen: "./images/take-vehicle.jpeg",
+          objeto: { ko: "버스", es: "el bus" },
+        },
+        {
+          coreano: "팔다",
+          traduccion: "vender",
+          imagen: "./images/sell.jpg",
+          objeto: { ko: "책", es: "el libro" },
+        },
+        {
+          coreano: "필요하다",
+          traduccion: "necesitar",
+          imagen: "./images/need.png",
+          objeto: { ko: "도움", es: "ayuda" },
+        },
+        {
+          coreano: "하다",
+          traduccion: "hacer",
+          imagen: "./images/do.png",
+          objeto: { ko: "숙제", es: "la tarea" },
+        },
+        {
+          coreano: "힘들다",
+          traduccion: "ser difícil / duro",
+          imagen: "./images/be-tough.jpeg",
+          objeto: { ko: "일", es: "el trabajo" },
+        },
       ];
 
       let currentVerb = 0;
@@ -822,8 +972,34 @@
         if (verb === "읽다") return "읽어요";
 
         // 76 - 90
+        if (verb === "잃어버리다") return "잃어버려요";
+        if (verb === "입다") return "입어요";
+        if (verb === "있다") return "있어요";
+        if (verb === "잊어버리다") return "잊어버려요";
+        if (verb === "자다") return "자요";
+        if (verb === "작다") return "작아요";
+        if (verb === "잘하다") return "잘해요";
+        if (verb === "재미있다") return "재미있어요";
+        if (verb === "적다") return "적어요";
+        if (verb === "전화하다") return "전화해요";
+        if (verb === "조심하다") return "조심해요";
+        if (verb === "좋다") return "좋아요";
+        if (verb === "좋아하다") return "좋아해요";
+        if (verb === "주다") return "줘요";
+        if (verb === "죽다") return "죽어요";
 
         // 91 - 100
+        if (verb === "중요하다") return "중요해요";
+        if (verb === "짧다") return "짧아요";
+        if (verb === "찾다") return "찾아요";
+        if (verb === "춥다") return "추워요"; // irregular
+        if (verb === "크다") return "커요";
+        if (verb === "타다") return "타요";
+        if (verb === "팔다") return "팔아요";
+        if (verb === "필요하다") return "필요해요";
+        if (verb === "하다") return "해요";
+        if (verb === "힘들다") return "힘들어요";
+
         return verb;
       }
     </script>
