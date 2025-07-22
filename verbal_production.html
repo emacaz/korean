@@ -471,13 +471,13 @@
         {
           coreano: "비싸다",
           traduccion: "ser caro",
-          imagen: "./images/expensive.png",
+          imagen: "./images/expensive.jpg",
           objeto: { ko: "물건", es: "objeto" },
         },
         {
           coreano: "빠르다",
           traduccion: "ser rápido",
-          imagen: "./images/fast.png",
+          imagen: "./images/fast.jpg",
           objeto: { ko: "자동차", es: "automóvil" },
         },
         {
@@ -513,7 +513,7 @@
         {
           coreano: "쉬다",
           traduccion: "descansar",
-          imagen: "./images/rest.png",
+          imagen: "./images/rest.jpeg",
           objeto: { ko: "휴식", es: "descanso" },
         },
         {
@@ -527,6 +527,96 @@
           traduccion: "empezar",
           imagen: "./images/start.png",
           objeto: { ko: "일", es: "trabajo" },
+        },
+        {
+          coreano: "싫다",
+          traduccion: "odiar / no gustar",
+          imagen: "./images/dislike.png",
+          objeto: { ko: "김치", es: "el kimchi" },
+        },
+        {
+          coreano: "싶다",
+          traduccion: "querer (hacer algo)",
+          imagen: "./images/want.png",
+          objeto: { ko: "먹고", es: "comer" },
+        },
+        {
+          coreano: "싸다",
+          traduccion: "ser barato",
+          imagen: "./images/cheap.png",
+          objeto: { ko: "가방", es: "la mochila" },
+        },
+        {
+          coreano: "쓰다",
+          traduccion: "escribir / usar / ser amargo",
+          imagen: "./images/write.jpg",
+          objeto: { ko: "편지", es: "la carta" },
+        },
+        {
+          coreano: "씻다",
+          traduccion: "lavar",
+          imagen: "./images/wash.jpg",
+          objeto: { ko: "손", es: "las manos" },
+        },
+        {
+          coreano: "아니다",
+          traduccion: "no ser",
+          imagen: "./images/not-be.png",
+          objeto: { ko: "학생", es: "un estudiante" },
+        },
+        {
+          coreano: "아프다",
+          traduccion: "doler / estar enfermo",
+          imagen: "./images/hurt.png",
+          objeto: { ko: "배", es: "el estómago" },
+        },
+        {
+          coreano: "앉다",
+          traduccion: "sentarse",
+          imagen: "./images/sit.png",
+          objeto: { ko: "의자", es: "la silla" },
+        },
+        {
+          coreano: "알다",
+          traduccion: "saber / conocer",
+          imagen: "./images/know.jpg",
+          objeto: { ko: "사실", es: "el hecho" },
+        },
+        {
+          coreano: "어둡다",
+          traduccion: "ser oscuro",
+          imagen: "./images/dark.png",
+          objeto: { ko: "방", es: "la habitación" },
+        },
+        {
+          coreano: "어렵다",
+          traduccion: "ser difícil",
+          imagen: "./images/difficult.png",
+          objeto: { ko: "질문", es: "la pregunta" },
+        },
+        {
+          coreano: "이다",
+          traduccion: "ser",
+          imagen: "./images/not-be.png",
+          objeto: { ko: "선생님", es: "el profesor" },
+        },
+        {
+          coreano: "일하다",
+          traduccion: "trabajar",
+          imagen: "./images/work.png",
+          objeto: { ko: "회사", es: "la empresa" },
+        },
+        {
+          coreano: "일어나다",
+          traduccion: "levantarse",
+          imagen: "./images/wake-up.png",
+          objeto: { ko: "침대", es: "la cama" },
+        },
+        {
+          coreano: "읽다",
+          traduccion: "leer",
+          imagen: "./images/read.png",
+          objeto: { ko: "책", es: "el libro" },
         },
       ];
 
@@ -715,6 +805,21 @@
         if (verb === "시작하다") return "시작해요";
 
         // 61 - 75
+        if (verb === "싫다") return "싫어요";
+        if (verb === "싶다") return "싶어요";
+        if (verb === "싸다") return "싸요";
+        if (verb === "쓰다") return "써요";
+        if (verb === "씻다") return "씻어요";
+        if (verb === "아니다") return "아니에요";
+        if (verb === "아프다") return "아파요"; // irregular ㅡ
+        if (verb === "앉다") return "앉아요";
+        if (verb === "알다") return "알아요";
+        if (verb === "어둡다") return "어두워요"; // irregular ㅂ
+        if (verb === "어렵다") return "어려워요"; // irregular ㅂ
+        if (verb === "이다") return "이에요";
+        if (verb === "일하다") return "일해요";
+        if (verb === "일어나다") return "일어나요";
+        if (verb === "읽다") return "읽어요";
 
         // 76 - 90
 
